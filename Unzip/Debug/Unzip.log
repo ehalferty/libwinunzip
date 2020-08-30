@@ -3,36 +3,12 @@
   Unzip.cpp
 C:\Users\edwar\source\repos\Unzip\Unzip\Unzip.cpp(43,23): warning C4018: '<': signed/unsigned mismatch
 C:\Users\edwar\source\repos\Unzip\Unzip\Unzip.cpp(49,21): warning C4018: '<': signed/unsigned mismatch
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory(694,82): error C2664: 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string(const std::basic_string<char,std::char_traits<char>,std::allocator<char>> &)': cannot convert argument 1 from '_Ty' to 'std::initializer_list<_Elem>'
-          with
-          [
-              _Ty=std::string *
-          ]
-          and
-          [
-              _Elem=char
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory(693,1): message : No constructor could take the source type, or constructor overload resolution was ambiguous
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring(2676,5): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vector(682): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,std::basic_string<char,std::char_traits<char>,std::allocator<char>>*>(_Alloc &,_Objty *const ,std::basic_string<char,std::char_traits<char>,std::allocator<char>> *&&)' being compiled
-          with
-          [
-              _Alloc=std::allocator<std::string>,
-              _Ty=std::basic_string<char,std::char_traits<char>,std::allocator<char>>,
-              _Objty=std::basic_string<char,std::char_traits<char>,std::allocator<char>>
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vector(687): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,std::basic_string<char,std::char_traits<char>,std::allocator<char>>*>(_Alloc &,_Objty *const ,std::basic_string<char,std::char_traits<char>,std::allocator<char>> *&&)' being compiled
-          with
-          [
-              _Alloc=std::allocator<std::string>,
-              _Ty=std::basic_string<char,std::char_traits<char>,std::allocator<char>>,
-              _Objty=std::basic_string<char,std::char_traits<char>,std::allocator<char>>
-          ]
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vector(700): message : see reference to function template instantiation 'void std::vector<std::string,std::allocator<std::string>>::_Emplace_back_with_unused_capacity<_Ty>(_Ty &&)' being compiled
-          with
-          [
-              _Ty=std::string *
-          ]
-C:\Users\edwar\source\repos\Unzip\Unzip\Unzip.cpp(48): message : see reference to function template instantiation 'void std::vector<std::string,std::allocator<std::string>>::emplace_back<std::string*>(std::string *&&)' being compiled
   unzipMain.cpp
+C:\Users\edwar\source\repos\Unzip\Unzip\unzipMain.cpp(1251,14): warning C5033: 'register' is no longer a supported storage class
+C:\Users\edwar\source\repos\Unzip\Unzip\unzipMain.cpp(1252,14): warning C5033: 'register' is no longer a supported storage class
+C:\Users\edwar\source\repos\Unzip\Unzip\unzipMain.cpp(1253,14): warning C5033: 'register' is no longer a supported storage class
+C:\Users\edwar\source\repos\Unzip\Unzip\unzipMain.cpp(1256,14): warning C5033: 'register' is no longer a supported storage class
+C:\Users\edwar\source\repos\Unzip\Unzip\unzipMain.cpp(1260,14): warning C5033: 'register' is no longer a supported storage class
   Generating Code...
+     Creating library C:\Users\edwar\source\repos\Unzip\Debug\Unzip.lib and object C:\Users\edwar\source\repos\Unzip\Debug\Unzip.exp
+  Unzip.vcxproj -> C:\Users\edwar\source\repos\Unzip\Debug\Unzip.dll

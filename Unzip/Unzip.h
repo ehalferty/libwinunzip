@@ -22,12 +22,12 @@ public:
 	bool failed;
 	unzFile uf;
 	unz_global_info gi;
-	CUnzip(std::string);
-	CUnzip(std::shared_ptr<std::vector<uint8_t>>);
-	std::shared_ptr<std::vector<std::string>> GetFiles();
-	bool FileExists(std::string);
+	CUnzip(std::string_view);
+	CUnzip(std::vector<uint8_t> const &);
+	std::vector<std::string> GetFiles();
+	bool FileExists(std::string_view);
 	void Close();
-	std::shared_ptr<std::vector<uint8_t>> GetFile(std::string);
+	std::vector<uint8_t> GetFile(std::string_view);
 };
 
 extern UNZIP_API int nUnzip;
