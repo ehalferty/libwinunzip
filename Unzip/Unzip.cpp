@@ -28,12 +28,10 @@ CUnzip::CUnzip(std::string_view filePath) {
             unzGoToFirstFile(uf);
         }
     }
-    return;
 }
 
 CUnzip::CUnzip(std::vector<uint8_t> const &fileData) {
     // TODO: Write to a temp file and re-open. Or maybe make parallel versions of (many) function sin unzipMain.cpp so they'll accept a pseudo-file struct?
-    return;
 }
 
 std::vector<std::string> CUnzip::GetFiles() {
@@ -45,7 +43,7 @@ std::vector<std::string> CUnzip::GetFiles() {
         if (err != UNZ_OK) {
             break;
         }
-        results.emplace_back(std::string(filename_inzip));
+        results.emplace_back(filename_inzip);
         if ((i + 1) < gi.number_entry) {
             err = unzGoToNextFile(uf);
             if (err != UNZ_OK) {
