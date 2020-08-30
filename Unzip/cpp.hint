@@ -1,0 +1,2 @@
+#define UNZIP_API __declspec(dllexport)
+#define UNZIP_API __declspec(dllimport)
