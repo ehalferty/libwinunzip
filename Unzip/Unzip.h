@@ -24,9 +24,9 @@ public:
 	unz_global_info gi;
 	CUnzip(std::string_view);
 	CUnzip(std::vector<uint8_t> const &);
+	~CUnzip();
 	std::vector<std::string> GetFiles();
 	bool FileExists(std::string_view);
-	void Close();
 	std::vector<uint8_t> GetFile(std::string_view);
 };
 

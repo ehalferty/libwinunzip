@@ -40,7 +40,7 @@ std::vector<std::string> CUnzip::GetFiles() {
     auto results = std::vector<std::string>();
     char filename_inzip[NAME_MAX];
     unz_file_info file_info;
-    for (int i = 0; i < gi.number_entry; i++) {
+    for (unsigned int i = 0; i < gi.number_entry; i++) {
         int err = unzGetCurrentFileInfo(uf, &file_info, filename_inzip, sizeof(filename_inzip), NULL, 0, NULL, 0);
         if (err != UNZ_OK) {
             break;
@@ -64,5 +64,6 @@ std::vector<uint8_t> CUnzip::GetFile(std::string_view) {
     return std::vector<uint8_t>();
 }
 
-void CUnzip::Close() {
+CUnzip::~CUnzip() {
+    // TODO: Close file handle, free zlib memory or whatever lolz
 }
