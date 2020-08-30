@@ -55,11 +55,27 @@ std::vector<std::string> CUnzip::GetFiles() {
 }
 
 bool CUnzip::FileExists(std::string_view filePath) {
-    return false;
+    return (unzLocateFile(uf, filePath.data(), isCaseSensitive) == UNZ_OK);
 }
 
-std::vector<uint8_t> CUnzip::GetFile(std::string_view) {
-    return std::vector<uint8_t>();
+std::vector<uint8_t> CUnzip::GetFile(std::string_view filePath) {
+    if (!FileExists(filePath)) {
+        failed = true;
+        return std::vector<uint8_t>();
+    }
+    if (unzOpenCurrentFile(uf) != UNZ_OK) {
+        failed = true;
+        return std::vector<uint8_t>();
+    }
+    unz_file_info file_info;
+    char filename_inzip[NAME_MAX];
+    if (unzGetCurrentFileInfo(uf, &file_info, filename_inzip, sizeof(filename_inzip), NULL, 0, NULL, 0) != UNZ_OK) {
+        failed = true;
+        return std::vector<uint8_t>();
+    }
+    auto buffer = static_cast<uint8_t*>(HeapAlloc(GetProcessHeap(), 0, sizeof(uint8_t) * file_info.uncompressed_size));
+    int bytesRead = unzReadCurrentFile(uf, buffer, file_info.uncompressed_size);
+    return std::vector(&buffer[0], &buffer[file_info.uncompressed_size]);
 }
 
 CUnzip::~CUnzip() {

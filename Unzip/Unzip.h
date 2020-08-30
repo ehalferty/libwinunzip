@@ -20,6 +20,7 @@
 class UNZIP_API CUnzip {
 public:
 	bool failed;
+	bool isCaseSensitive = false;
 	unzFile uf;
 	unz_global_info gi;
 	CUnzip(std::string_view);
