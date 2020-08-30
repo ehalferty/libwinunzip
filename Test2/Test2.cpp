@@ -1,4 +1,4 @@
-// This test project is set up to include unzip as a static lib
+// This test project is set up to include unzip as a DLL (lib file (make sure it's x64/debug if this is x64!) output from unzip included in this project)
 
 #include <iostream>
 #include <windows.h>
